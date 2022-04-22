@@ -80,7 +80,7 @@ post "/uploads/:id/import" do
     attributed_to = row
       .values_at(*customer_fields)
       .map { |val| val.to_s.strip }
-      .reject(&:blank?)
+      .reject(&:empty?)
       .join(", ")
 
     title = nil
